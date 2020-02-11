@@ -4,12 +4,13 @@ h1 {
  font-family: 'Courier New', Courier, monospace;
  background-color: burlywood;
 }
+
 #navbarNav{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    
 }
+<<<<<<< HEAD
 .container1{
     max-width: 100%;
   text-align: center;
@@ -21,4 +22,17 @@ h1 {
   color: white;
   font-size: 150px;
   
+=======
+
+.carousel .item {
+    height: 300px;
+  }
+  
+.item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+    width: 100%;
+>>>>>>> 97d913ba02691285858d9d772bc346b2ad95b14c
 }
