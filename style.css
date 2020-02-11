@@ -10,13 +10,15 @@ h1 {
     align-items: flex-end;
     
 }
-.carousel .item {
-    height: 300px;
-  }
+.container1{
+    max-width: 100%;
+  text-align: center;
+}
+.headerInImage{
+
+  bottom: 338px;
+  right: 136px;
+  color: white;
+  font-size: 150px;
   
-  .item img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      min-height: 300px;
-  }
+}
