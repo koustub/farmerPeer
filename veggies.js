@@ -16,7 +16,7 @@ let ArrOfVeggies = [
         maxTemp : 24,
         timeToGrow : 50,
         gallonsOfWaterPerWeek : 1,
-        veggieimg :'assets/veggies-img/beans.jpg'
+        veggieimg :'assets/veggies-img/beetroot.jpg'
     },
     {   id:3,
         name:'Broccoli',
@@ -25,7 +25,7 @@ let ArrOfVeggies = [
         maxTemp : 24,
         timeToGrow : 125,
         gallonsOfWaterPerWeek : 1,
-        veggieimg :'assets/veggies-img/beans.jpg'
+        veggieimg :'assets/veggies-img/broccoli.jpg'
     },
     {   id:4,
         name:'Cabbage',
@@ -34,7 +34,7 @@ let ArrOfVeggies = [
         maxTemp : 24,
         timeToGrow : 120,
         gallonsOfWaterPerWeek : 1,
-        veggieimg :'assets/veggies-img/beans.jpg'
+        veggieimg :'assets/veggies-img/cabbage.jpg'
     },
     {   id:5,
         name:'Carrot',
@@ -43,7 +43,7 @@ let ArrOfVeggies = [
         maxTemp : 24,
         timeToGrow : 75,
         gallonsOfWaterPerWeek : 2,
-        veggieimg :'assets/veggies-img/beans.jpg'
+        veggieimg :'assets/veggies-img/carrot.jpg'
     },
     {   id:6,
         name:'Corn',
@@ -52,7 +52,7 @@ let ArrOfVeggies = [
         maxTemp : 27,
         timeToGrow : 80,
         gallonsOfWaterPerWeek : 2,
-        veggieimg :'assets/veggies-img/beans.jpg'
+        veggieimg :'assets/veggies-img/corn.jpg'
     },
     {   id:7,
         name:'Egg Plant',
@@ -70,7 +70,7 @@ let ArrOfVeggies = [
         maxTemp : 24,
         timeToGrow : 50,
         gallonsOfWaterPerWeek : 1,
-        veggieimg :'assets/veggies-img/beans.jpg'
+        veggieimg :'assets/veggies-img/spinach.jpg'
     },
     
     {   id:9,
@@ -80,7 +80,7 @@ let ArrOfVeggies = [
         maxTemp : 27,
         timeToGrow : 85,
         gallonsOfWaterPerWeek : 1,
-        veggieimg :'assets/veggies-img/beans.jpg'
+        veggieimg :'assets/veggies-img/tomatos.jpg'
     },
     {
         id:10,
@@ -90,15 +90,15 @@ let ArrOfVeggies = [
         maxTemp : 22,
         timeToGrow : 60,
         gallonsOfWaterPerWeek :1,
-        veggieimg :'assets/veggies-img/beans.jpg'
+        veggieimg :'assets/veggies-img/cucumber.jpg'
     }
 
 ];
 plantsToGrow();
 
-
 function plantsToGrow()
 {   
+    var displayCrops = document.getElementById('containerVeggies');
     var temp = prompt("give your temp in your area");
     var humidity = prompt('chances of rain in your location');
     var percentOfSoilMoisture = prompt('give me your soil moisture in your location');
@@ -129,16 +129,29 @@ function plantsToGrow()
         }
     }
     console.log(`${arrOfSelectedVeggieForFarmer}`);
-    var displayCrops = document.getElementById('cropsToGrow');
+    // document.getElementsByClassName('container-veggies');
     for (i = 0; i < arrOfSelectedVeggieForFarmer.length; i++) {
         for (j= 0; j < ArrOfVeggies.length; j++) {
             if (arrOfSelectedVeggieForFarmer[i].localeCompare(ArrOfVeggies[j].name) == 0) {
                 if(percentOfSoilMoisture > 0 && percentOfSoilMoisture < 15){var waterForPlant = ArrOfVeggies[j].gallonsOfWaterPerWeek * 4;}
                 else if(percentOfSoilMoisture > 15 && percentOfSoilMoisture < 30){var waterForPlant = ArrOfVeggies[j].gallonsOfWaterPerWeek * 2;}
                 else{var waterForPlant = ArrOfVeggies[j].gallonsOfWaterPerWeek };
-                displayCrops.innerHTML += `<h1>${ArrOfVeggies[j].name}</h2><img src='${ArrOfVeggies[j].veggieimg}'>
-                <h2>Plant Type :${ArrOfVeggies[j].type}</h2><h2>Days to Grow :${ArrOfVeggies[j].timeToGrow} Days</h2>
-                <h2>No of Gallons Per Week :${waterForPlant}</h2><br>`;
+                console.log('about to append');
+                
+                displayCrops.innerHTML +=`<div class="col-12 col-lg-4 veggies-card">
+                        <div class="veggies-title">
+                            <h1>${ArrOfVeggies[j].name}<h1>
+                        </div>
+                        <div class="veggies-img">
+                            <img src='${ArrOfVeggies[j].veggieimg}' class="img-fluid"/>
+                        </div>
+                        <div class="veggies-text">
+                            <p>Plant Type :${ArrOfVeggies[j].type}</p>
+                            <p>Days to Grow :${ArrOfVeggies[j].timeToGrow} Days</p>
+                            <p>No of Gallons Per Week :${waterForPlant}</p>
+                        </div>
+                    </div>`
+                ;
             }
         }
     }
