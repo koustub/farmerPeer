@@ -5,7 +5,8 @@ let ArrOfVeggies = [
         minTemp : 5,
         maxTemp : 24,
         timeToGrow : 70,
-        gallonsOfWaterPerWeek : 2
+        gallonsOfWaterPerWeek : 2,
+        veggieimg :'assets/veggies-img/beans.jpg'
 
     },
     {   id:2,
@@ -14,7 +15,8 @@ let ArrOfVeggies = [
         minTemp : 5,
         maxTemp : 24,
         timeToGrow : 50,
-        gallonsOfWaterPerWeek : 1
+        gallonsOfWaterPerWeek : 1,
+        veggieimg :'assets/veggies-img/beans.jpg'
     },
     {   id:3,
         name:'Broccoli',
@@ -22,7 +24,8 @@ let ArrOfVeggies = [
         minTemp : 5,
         maxTemp : 24,
         timeToGrow : 125,
-        gallonsOfWaterPerWeek : 1
+        gallonsOfWaterPerWeek : 1,
+        veggieimg :'assets/veggies-img/beans.jpg'
     },
     {   id:4,
         name:'Cabbage',
@@ -30,7 +33,8 @@ let ArrOfVeggies = [
         minTemp : 5,
         maxTemp : 24,
         timeToGrow : 120,
-        gallonsOfWaterPerWeek : 1
+        gallonsOfWaterPerWeek : 1,
+        veggieimg :'assets/veggies-img/beans.jpg'
     },
     {   id:5,
         name:'Carrot',
@@ -38,7 +42,8 @@ let ArrOfVeggies = [
         minTemp : 5,
         maxTemp : 24,
         timeToGrow : 75,
-        gallonsOfWaterPerWeek : 2
+        gallonsOfWaterPerWeek : 2,
+        veggieimg :'assets/veggies-img/beans.jpg'
     },
     {   id:6,
         name:'Corn',
@@ -46,7 +51,8 @@ let ArrOfVeggies = [
         minTemp : 10,
         maxTemp : 27,
         timeToGrow : 80,
-        gallonsOfWaterPerWeek : 2
+        gallonsOfWaterPerWeek : 2,
+        veggieimg :'assets/veggies-img/beans.jpg'
     },
     {   id:7,
         name:'Egg Plant',
@@ -54,7 +60,8 @@ let ArrOfVeggies = [
         minTemp : 18,
         maxTemp : 25,
         timeToGrow : 80,
-        gallonsOfWaterPerWeek : 2
+        gallonsOfWaterPerWeek : 2,
+        veggieimg :'assets/veggies-img/beans.jpg'
     },
     {   id:8,
         name:'Spinach',
@@ -62,7 +69,8 @@ let ArrOfVeggies = [
         minTemp : 5,
         maxTemp : 24,
         timeToGrow : 50,
-        gallonsOfWaterPerWeek : 1
+        gallonsOfWaterPerWeek : 1,
+        veggieimg :'assets/veggies-img/beans.jpg'
     },
     {   id:9,
         name:'Tomato',
@@ -70,7 +78,8 @@ let ArrOfVeggies = [
         minTemp : 18,
         maxTemp : 27,
         timeToGrow : 85,
-        gallonsOfWaterPerWeek : 1
+        gallonsOfWaterPerWeek : 1,
+        veggieimg :'assets/veggies-img/beans.jpg'
     },
     {
         id:10,
@@ -79,7 +88,8 @@ let ArrOfVeggies = [
         minTemp : 15,
         maxTemp : 22,
         timeToGrow : 60,
-        gallonsOfWaterPerWeek :1
+        gallonsOfWaterPerWeek :1,
+        veggieimg :'assets/veggies-img/beans.jpg'
     }
 
 ];
@@ -125,7 +135,7 @@ function plantsToGrow()
                 if(percentOfSoilMoisture > 0 && percentOfSoilMoisture < 15){var waterForPlant = ArrOfVeggies[j].gallonsOfWaterPerWeek * 4;}
                 else if(percentOfSoilMoisture > 15 && percentOfSoilMoisture < 30){var waterForPlant = ArrOfVeggies[j].gallonsOfWaterPerWeek * 2;}
                 else{var waterForPlant = ArrOfVeggies[j].gallonsOfWaterPerWeek };
-                displayCrops.innerHTML += `<h1>${ArrOfVeggies[j].name}</h2>
+                displayCrops.innerHTML += `<h1>${ArrOfVeggies[j].name}</h2><img src='${ArrOfVeggies[j].veggieimg}'>
                 <h2>Plant Type :${ArrOfVeggies[j].type}</h2><h2>Days to Grow :${ArrOfVeggies[j].timeToGrow} Days</h2>
                 <h2>No of Gallons Per Week :${waterForPlant}</h2><br>`;
             }
