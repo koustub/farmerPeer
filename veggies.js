@@ -215,9 +215,20 @@ function plantsToGrow()
                 if(percentOfSoilMoisture > 0 && percentOfSoilMoisture < 15){var waterForPlant = ArrOfVeggies[j].gallonsOfWaterPerWeek * 4;}
                 else if(percentOfSoilMoisture > 15 && percentOfSoilMoisture < 30){var waterForPlant = ArrOfVeggies[j].gallonsOfWaterPerWeek * 2;}
                 else{var waterForPlant = ArrOfVeggies[j].gallonsOfWaterPerWeek };
-                displayCrops.innerHTML += `<h1>${ArrOfVeggies[j].name}</h2>
-                <h2>Plant Type :${ArrOfVeggies[j].type}</h2><h2>Days to Grow :${ArrOfVeggies[j].timeToGrow} Days</h2>
-                <h2>No of Gallons Per Week :${waterForPlant}</h2><br>`;
+                 displayCrops.innerHTML +=`<div class="col-12 col-lg-4 veggies-card">
+                        <div class="veggies-title">
+                            <h1>${ArrOfVeggies[j].name}<h1>
+                        </div>
+                        <div class="veggies-img">
+                            <img src='${ArrOfVeggies[j].veggieimg}' class="img-fluid"/>
+                        </div>
+                        <div class="veggies-text">
+                            <p>Plant Type :${ArrOfVeggies[j].type}</p>
+                            <p>Days to Grow :${ArrOfVeggies[j].timeToGrow} Days</p>
+                            <p>No of Gallons Per Week :${waterForPlant}</p>
+                        </div>
+                    </div>`
+
             }
         }
     }
