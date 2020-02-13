@@ -85,6 +85,19 @@ body {
     justify-content: center;
     text-align: center;
 }
+<<<<<<< HEAD
+.container1{
+    max-width: 100%;
+  text-align: center;
+}
+.headerInImage{
+
+  bottom: 338px;
+  right: 136px;
+  color: white;
+  font-size: 150px;
+  
+=======
 
 .market-p-title {
     padding: 10px;
@@ -96,6 +109,7 @@ body {
 
 footer {
     width: 100%;
+<<<<<<< HEAD
     margin-top: 50px;
     background-color: whitesmoke;   
     display: flex;
@@ -103,4 +117,7 @@ footer {
     padding: 30px 0px;
     
   
+=======
+>>>>>>> 97d913ba02691285858d9d772bc346b2ad95b14c
+>>>>>>> 8573b20ae2569e671177b029f7702fb7f3b1b830
 }
