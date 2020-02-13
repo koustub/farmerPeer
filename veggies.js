@@ -74,13 +74,103 @@ let ArrOfVeggies = [
     },
     {
         id:10,
-        name:'cucumber',
+        name:'Cucumber',
         type:'extreme tender',
         minTemp : 15,
         maxTemp : 22,
         timeToGrow : 60,
         gallonsOfWaterPerWeek :1
-    }
+    },
+    {
+        id:11,
+        name:'Cauliflower',
+        type:'half-hardy', 
+        minTemp : 10,
+        maxTemp : 25,
+        timeToGrow : 25,
+        gallonsOfWaterPerWeek :1
+    },
+    {
+        id:12,
+        name:'Lettuce',
+        type:'fairly hardy', 
+        minTemp : 12,
+        maxTemp : 28,
+        timeToGrow : 55,
+        gallonsOfWaterPerWeek :0.5
+    },
+    {
+        id:13,
+        name:'Celery',
+        type:'half-hardy', 
+        minTemp : 15,
+        maxTemp : 21,
+        timeToGrow : 140,
+        gallonsOfWaterPerWeek :3
+    },
+    {
+        id:14,
+        name:'Squash',
+        type:'tender', 
+        minTemp : 15,
+        maxTemp : 29,
+        timeToGrow : 60,
+        gallonsOfWaterPerWeek :0.004
+    },
+    {
+        id:15,
+        name:'Brussels Sprouts',
+        type:'hardy', 
+        minTemp : 15,
+        maxTemp : 18,
+        timeToGrow : 90,
+        gallonsOfWaterPerWeek :1 /*Weird  */
+    },
+    {
+        id:16,
+        name:'Onions',
+        type:'hardy', 
+        minTemp : 20,
+        maxTemp : 25,
+        timeToGrow : 30,
+        gallonsOfWaterPerWeek :1.6 
+    },
+    {
+        id:17,
+        name:'Muskmelon',
+        type:'tender', 
+        minTemp : 21,
+        maxTemp : 32,
+        timeToGrow : 90,
+        gallonsOfWaterPerWeek :0.004 
+    },
+    {
+        id:18,
+        name:'Endives',
+        type:'half-hardy', 
+        minTemp : 15,
+        maxTemp : 18,
+        timeToGrow : 100,
+        gallonsOfWaterPerWeek :2
+    },
+    {
+        id:19,
+        name:'Pepper',
+        type:'tender', 
+        minTemp : 18,
+        maxTemp : 26,
+        timeToGrow : 90,
+        gallonsOfWaterPerWeek :0.004
+    },
+    {
+        id:20,
+        name:'Collard',
+        type:'hardy', 
+        minTemp : 4,
+        maxTemp : 15,
+        timeToGrow : 85,
+        gallonsOfWaterPerWeek :1.5
+    },
 
 ];
 plantsToGrow();
