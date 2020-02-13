@@ -72,6 +72,7 @@ let ArrOfVeggies = [
         gallonsOfWaterPerWeek : 1,
         veggieimg :'assets/veggies-img/beans.jpg'
     },
+    
     {   id:9,
         name:'Tomato',
         type : 'tender',
