@@ -12,6 +12,11 @@ body {
     text-align: center;
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .navbar-brand img {
     border-radius: 50%;
     background-color: white;
@@ -23,9 +28,6 @@ body {
     margin-top: 35px;
 }
 
-.about-area .about-image img {
-    width: 100%;
-}
 
 .about-area .about-title {
     text-align: center;
@@ -37,9 +39,16 @@ body {
     text-align: justify;
 }
 
+.about-area .about-image img:hover {
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+.carousel-inner {
+    box-shadow: 10px 10px 10px;
+}
 /* Conditions Section  */
 .crops-info {
-    background-color:#b9f6ca;
+    background-color:#8bc34a;
     width: 100%;
     margin: 40px 0;
 }
@@ -110,3 +119,18 @@ footer {
     
   
 }
+
+@media only screen and (max-width: 400px) {
+    .navbar-brand img {
+
+        border-radius: 50%;
+        background-color: white;
+        padding: 10px;
+        width: 70px;
+    }
+
+    .h1-title {
+        width: 100%;
+        font-size: 35px;
+    }
+  }
