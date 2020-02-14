@@ -201,79 +201,6 @@ let veggiesArr = [
 
 ];
 
-plantsToGrow();
-
-let soilTemp ;
-let soilMoisture;
-let humidity;
-let temp;
-let uvIndex;
-
-function plantsToGrow() {   
-    // var temp = prompt("Temperature of your Area");
-    // var humidity = prompt('Humidity');
-    // var soilMoisture = prompt('Soil Moisture in your location');
-    var plantType = "";
-    var farmersCrop = [];
-
-    for ( var i = 0; i < veggiesArr.length ; i++) {
-        console.log('i have entered first for loop');
-
-        //Checks if temperature is between min and max temp of each veggie
-        if( (temp >= veggiesArr[i].minTemp) && (temp <= veggiesArr[i].maxTemp) ){  
-            if (humidity >= 0 && humidity <= 25) {
-                plantType ='hardy';
-
-            } else if (humidity > 25 && humidity <= 50) {
-                plantType = 'half-hardy';
-
-            } else if (humidity > 50 && humidity < 75) {
-                plantType = 'tender';
-
-            } else {
-                plantType = 'extreme tender'
-            }
-
-            if (plantType == veggiesArr[i].type) {
-                console.log("i have entered this loop");
-                farmersCrop.push(veggiesArr[i].name);  
-            }
-        }
-    }
-
-
-    var displayCrops = document.getElementById('veggies');
-    for (var i = 0; i < farmersCrop.length; i++) {
-
-        for (var j= 0; j < veggiesArr.length; j++) {
-            if (farmersCrop[i].localeCompare(veggiesArr[j].name) == 0) {
-
-                if(soilMoisture > 0 && soilMoisture < 15){
-                    var waterForPlant = veggiesArr[j].gallonsOfWaterPerWeek * 4;
-                
-                }else if(soilMoisture > 15 && soilMoisture < 30){
-                    var waterForPlant = veggiesArr[j].gallonsOfWaterPerWeek * 2;
-                
-                }else { 
-                    var waterForPlant = veggiesArr[j].gallonsOfWaterPerWeek 
-                }
-
-
-             displayCrops.innerHTML +=
-                `
-                <div class="col-6 col-md-8 col-lg-3 veggies-card">
-                    <h5 class=" text-uppercase veggies-title">${veggiesArr[j].name}</h5>
-                    <img src="${veggiesArr[j].veggieImg}" class="img-fluid veggies-img " >
-                    <p class="veggies-text">Plant Type :${veggiesArr[j].type}</p>
-                    <p class="veggies-text">Days to Grow :${veggiesArr[j].timeToGrow} Days</p>
-                    <p class="veggies-text">No of Gallons Per Week :${waterForPlant}</p>
-                </div> 
-                `
-            }   
-        }
-    }
-    
-}
 // SCRIPT TO GET USER LOCATION, CREATE POLYGON, GET POLYGON ID, GET DATA FOR POLYGON, AND COVERT THAT DATA INTO VARs
 // SCRIPT TO GET USER LOCATION, CREATE POLYGON, GET POLYGON ID, GET DATA FOR POLYGON, AND COVERT THAT DATA INTO VARs
 // SCRIPT TO GET USER LOCATION, CREATE POLYGON, GET POLYGON ID, GET DATA FOR POLYGON, AND COVERT THAT DATA INTO VARs
@@ -282,7 +209,13 @@ var x = document.getElementById("demo");
 let polygonCache = {};
 var png = '';
 // variables from retreived data
-
+let soilTemp ;
+let soilMoisture;
+let humidity;
+let temp;
+let uvIndex;
+let latitude;
+let longitude;
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -292,9 +225,6 @@ function getLocation() {
   }
 }
 getLocation();
-
-let latitude;
-let longitude;
 
 function showPosition(position) {
       latitude = (position.coords.latitude);
@@ -410,11 +340,83 @@ function weatherData(response) {
 function showSateliteImage(response) {
   // console.log(response);
   let arrayLength = response.length-1
-  $('#myPic').attr( 'src', response[arrayLength].image.truecolor);
+  $('#satImage').attr( 'src', response[arrayLength].image.truecolor);
 }
 function showUvIndex(response) {
   uvIndex = response.uvi;
   console.log(`uv index: ${response.uvi}`);
+}
+                        // API SCRIPT STOPS HERE!
+                        // API SCRIPT STOPS HERE!
+                        // API SCRIPT STOPS HERE!
+
+plantsToGrow();
+
+
+function plantsToGrow() {   
+    // var temp = prompt("Temperature of your Area");
+    // var humidity = prompt('Humidity');
+    // var soilMoisture = prompt('Soil Moisture in your location');
+    var plantType = "";
+    var farmersCrop = [];
+
+    for ( var i = 0; i < veggiesArr.length ; i++) {
+        console.log('i have entered first for loop');
+
+        //Checks if temperature is between min and max temp of each veggie
+        if( (temp >= veggiesArr[i].minTemp) && (temp <= veggiesArr[i].maxTemp) ){  
+            if (humidity >= 0 && humidity <= 25) {
+                plantType ='hardy';
+
+            } else if (humidity > 25 && humidity <= 50) {
+                plantType = 'half-hardy';
+
+            } else if (humidity > 50 && humidity < 75) {
+                plantType = 'tender';
+
+            } else {
+                plantType = 'extreme tender'
+            }
+
+            if (plantType == veggiesArr[i].type) {
+                console.log("i have entered this loop");
+                farmersCrop.push(veggiesArr[i].name);  
+            }
+        }
+    }
+
+
+    var displayCrops = document.getElementById('veggies');
+    for (var i = 0; i < farmersCrop.length; i++) {
+
+        for (var j= 0; j < veggiesArr.length; j++) {
+            if (farmersCrop[i].localeCompare(veggiesArr[j].name) == 0) {
+
+                if(soilMoisture > 0 && soilMoisture < 15){
+                    var waterForPlant = veggiesArr[j].gallonsOfWaterPerWeek * 4;
+                
+                }else if(soilMoisture > 15 && soilMoisture < 30){
+                    var waterForPlant = veggiesArr[j].gallonsOfWaterPerWeek * 2;
+                
+                }else { 
+                    var waterForPlant = veggiesArr[j].gallonsOfWaterPerWeek 
+                }
+
+
+             displayCrops.innerHTML +=
+                `
+                <div class="col-6 col-md-8 col-lg-3 veggies-card">
+                    <h5 class=" text-uppercase veggies-title">${veggiesArr[j].name}</h5>
+                    <img src="${veggiesArr[j].veggieImg}" class="img-fluid veggies-img " >
+                    <p class="veggies-text">Plant Type :${veggiesArr[j].type}</p>
+                    <p class="veggies-text">Days to Grow :${veggiesArr[j].timeToGrow} Days</p>
+                    <p class="veggies-text">No of Gallons Per Week :${waterForPlant}</p>
+                </div> 
+                `
+            }   
+        }
+    }
+    
 }
 
 
