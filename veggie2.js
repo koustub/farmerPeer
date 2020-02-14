@@ -203,10 +203,16 @@ let veggiesArr = [
 
 plantsToGrow();
 
+let soilTemp ;
+let soilMoisture;
+let humidity;
+let temp;
+let uvIndex;
+
 function plantsToGrow() {   
-    var temp = prompt("Temperature of your Area");
-    var humidity = prompt('Humidity');
-    var soilMoisture = prompt('Soil Moisture in your location');
+    // var temp = prompt("Temperature of your Area");
+    // var humidity = prompt('Humidity');
+    // var soilMoisture = prompt('Soil Moisture in your location');
     var plantType = "";
     var farmersCrop = [];
 
@@ -268,5 +274,149 @@ function plantsToGrow() {
     }
     
 }
+// SCRIPT TO GET USER LOCATION, CREATE POLYGON, GET POLYGON ID, GET DATA FOR POLYGON, AND COVERT THAT DATA INTO VARs
+// SCRIPT TO GET USER LOCATION, CREATE POLYGON, GET POLYGON ID, GET DATA FOR POLYGON, AND COVERT THAT DATA INTO VARs
+// SCRIPT TO GET USER LOCATION, CREATE POLYGON, GET POLYGON ID, GET DATA FOR POLYGON, AND COVERT THAT DATA INTO VARs
+
+var x = document.getElementById("demo");
+let polygonCache = {};
+var png = '';
+// variables from retreived data
+
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+getLocation();
+
+let latitude;
+let longitude;
+
+function showPosition(position) {
+      latitude = (position.coords.latitude);
+      longitude = (position.coords.longitude);
+    const sampleLocations = [
+      // { name: 'San Francisco', lat: 37.7749, long: -122.4194 },
+      // { name: 'New York', lat: 40.7128, long: -74.0060 },
+      { name: 'currentLocation', lat: Number(latitude), long: Number(longitude) }
+    ]
+    console.log(`latitude: ${latitude}, longitude: ${longitude}`);
+    // loop through sample data and get info
+    sampleLocations.forEach( requestPolygonId )
+   //requestPolygonId();
+}
+// function to create polygon and submit QueryUrl to request polygon Id
+function requestPolygonId( city ){
+  // check if we are caching this already
+  console.log( `[requestPolygonId] called with city: `, city );
+
+  if( polygonCache[city] && polygonCache[city].long )
+    return polygonCache[city];
+
+  let lonAdd = (city.long+0.02);
+  let lonMin = (city.long-0.02);
+  let latAdd = (city.lat+0.01);
+  let latMin = (city.lat-0.01);
+
+  console.log( `.. requesting agro polygon...` );
+  const url = 'http://api.agromonitoring.com/agro/1.0/polygons?appid=78dc899eb37cab91867a345825f4223c';
+  const data = {
+        "name":`${city.name}_Polygon`,
+        "geo_json":{
+            "type":"Feature",
+            "properties":{
+
+            },
+            "geometry":{
+              "type":"Polygon",
+              "coordinates":[
+                  [
+                    [lonAdd, latAdd],
+                    [lonMin, latAdd],
+                    [lonMin, latMin],
+                    [lonAdd, latMin],
+                    [lonAdd, latAdd],
+                  ]
+                ]
+              }
+            }
+  };
+  $.ajax({
+    url: url, 
+    type: 'POST',
+    data: JSON.stringify( data ),
+    contentType: "application/json; charset=utf-8"
+  })
+    .then( function( response ){ submitPolygonId( response, city ); } );
+}
+
+
+function submitPolygonId(response,city) {
+    console.log(`[submitPolygonId] city(${city}), response: `, response);
+    polygonCache[city] = response;
+
+    getSoilData(response);
+    getWeatherData(response);
+    getSateliteImage(response);
+    getUvIndex(response);
+}
+// functions to send polygon it and retreive objects with data (soil data, weather, satelite image)
+function getSoilData(response) {
+    $.ajax({
+                url: `http://api.agromonitoring.com/agro/1.0/soil?polyid=${response.id}&appid=78dc899eb37cab91867a345825f4223c`,
+                method: "GET"
+            }).then(soilData);
+}
+function getWeatherData() {
+    $.ajax({
+                url: `http://api.openweathermap.org/data/2.5/weather?lat=${Math.round(latitude)}&lon=${Math.round(longitude)}&appid=748ff1a0b719ff81bb15bda076c9541d`,
+                method: "GET"
+            }).then(weatherData);
+}
+function getSateliteImage(response) {
+    $.ajax({
+                url: `http://api.agromonitoring.com/agro/1.0/image/search?start=1414819564&end=1577891564&resolution_min=1000&&clouds_max=10&polyid=${response.id}&appid=78dc899eb37cab91867a345825f4223c`,
+                method: "GET"
+            }).then(showSateliteImage);
+}
+function getUvIndex(response) {
+    $.ajax({
+                url: `http://api.agromonitoring.com/agro/1.0/uvi?polyid=${response.id}&appid=78dc899eb37cab91867a345825f4223c`,
+                method: "GET"
+            }).then(showUvIndex);
+}
+
+// functions to convert retreived data into variables/ append satelite image
+function soilData(response){
+    console.log(response);
+     soilTemp = Math.round(response.t0-273.15);
+    //  celcius10 = Math.round(response.t10-273.15);
+     soilMoisture = response.moisture;
+    console.log(`soil temp: ${temp}`);
+    console.log(`moisture: ${response.moisture}`);
+
+}
+function weatherData(response) {
+  temp = Math.round(response.main.temp-273.15);
+  console.log(`Temperature: ${temp}`);
+
+  humidity = response.main.humidity;
+  console.log(`Humidity: ${response.main.humidity}`);
+}
+function showSateliteImage(response) {
+  // console.log(response);
+  let arrayLength = response.length-1
+  $('#myPic').attr( 'src', response[arrayLength].image.truecolor);
+}
+function showUvIndex(response) {
+  uvIndex = response.uvi;
+  console.log(`uv index: ${response.uvi}`);
+}
+
+
 
 
