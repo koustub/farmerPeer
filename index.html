@@ -5,8 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=PT+Serif|Raleway:400,700,800&display=swap" rel="stylesheet">        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
 
         <title>Farmer's Market Project</title>
@@ -15,7 +14,7 @@
         <div class="header-area">
             <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="navBar">
                 <a class="navbar-brand"><img src="assets/img/ecology.png" alt="" width="100px"></a>
-                <span class="h1-title">Farmer's Friend</span>
+                <span class="h1-title">Farmer's <span style="color: #2ECC71 ">Friend</span></span>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -28,7 +27,7 @@
                             <a class="nav-link" href="info.html">Crops</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="#">Markets</a>
+                            <a class="nav-link" href="market.html">Markets</a>
                         </li> 
                     </ul>
                 </div>
@@ -55,7 +54,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12 col-12 about-title">
                         <h2 class="text-uppercase">
-                            <span style="font-weight: bold;">About</span>
+                            <span style="font-weight: bold; font-size: 45px;">About</span>
                             <hr style="border: 1px solid #00e676; width: 90%;"/>
                         </h2>
                         <div class="about-paragraph">
@@ -73,9 +72,9 @@
         </div>
 
         <div class="container-fluid crops-info">
-            <h1 class="crop-title">Crop Yield Conditions</h1>
+            <h1 class="crop-title text-uppercase">Crop Yield Conditions</h1>
             <div class="row button">
-                <a href="#" class="btn btn-outline-success btn-lg mx-auto" role="button" aria-pressed="true" >Get Started</a>
+                <a href="info.html" class="btn btn-lg mx-auto crop-button" role="button" aria-pressed="true" >Get Started</a>
             </div>
             <div class="row justify-content-center" style='padding-bottom: 25px;'>
                 
@@ -86,7 +85,8 @@
                         </div>
 
                         <div class="card-body">
-                            <h5 class="card-title">Weather Conditions</h5>
+                            <h5 class="card-title">Weather <br> Conditions</h5>
+                            <hr/>
                             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, vel?  
                                 laudantium quod libero maiores beatae corrupti dicta praesentium vel.</p>
                         </div>
@@ -100,7 +100,8 @@
                         </div>
 
                         <div class="card-body">
-                            <h5 class="card-title">Satellite Imaging</h5>
+                            <h5 class="card-title">Satellite <br> Imaging</h5>
+                            <hr/>
                             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, vel?  
                                 laudantium quod libero maiores beatae corrupti dicta praesentium vel.</p>
                         </div>
@@ -113,7 +114,8 @@
                         </div>
 
                         <div class="card-body">
-                            <h5 class="card-title">Soil Moisture</h5>
+                            <h5 class="card-title">Soil <br> Moisture</h5>
+                            <hr/>
                             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, vel?  
                                 laudantium quod libero maiores beatae corrupti dicta praesentium vel.</p>
                         </div>
@@ -127,21 +129,20 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-12 col-12">
                         <h1 class="text-uppercase" style="text-align: center;">
-                            <span">Market Info</span>
+                            <span>Market Info</span>
                             <hr style="border: 1px solid #00e676; width: 50%;"/>
                         </h1>  
-                        <img src="https://static.vecteezy.com/system/resources/thumbnails/000/192/069/small/farm_market_logo_1.png" alt="icon" >         
+                        <img src="assets/img/market.png" alt="icon" class="img-fluid">         
                     </div>
                     <div class="col-lg-6 col-md-12 col-12 market-para">
-                        <div class="market-p-title">
-                            <h4>Ready to <strong style="color: green;">- GROW- </strong> your business</h4>
-                            <a href="#" class="btn btn-outline-success btn-lg mx-auto" role="button" aria-pressed="true" >Get Started</a>
+                        <div class="market-title">
+                            <h3 class="text-uppercase">Ready to <span class="market-grow" style="color:#2ECC71;">GROW</span> your business</h3>
                         </div>
                         <p>
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos praesentium impedit Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                             Magnam eveniet in velit et reiciendis voluptates officiis totam ullam ipsum provident.
                         </p>
-                    
+                        <a href="market.html" class="btn btn-lg mx-auto market-button" role="button" aria-pressed="true" >Get Started</a>
                     </div>
                 </div>
             </div>

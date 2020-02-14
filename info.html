@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=PT+Serif|Raleway:400,700,800&display=swap" rel="stylesheet">        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href= "info.css">
@@ -17,20 +17,20 @@
         <div class="header-area">
             <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="navBar">
                 <a class="navbar-brand"><img src="assets/img/ecology.png" alt="" width="100px"></a>
-                <span class="h1-title">Farmer's Friend</span>
+                <span class="h1-title">Farmer's <span style="color: #2ECC71 ">Friend</span></span>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Crops</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="#">Markets</a>
+                            <a class="nav-link" href="market.html">Markets</a>
                         </li> 
                     </ul>
                 </div>
@@ -39,28 +39,26 @@
 
         <div class="satellite-info">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-12">
-                        <div class="image">
-                            <img src="https://image.cnbcfm.com/api/v1/image/106278717-1575487551656screenshot2019-12-04at2.25.16pm.png?v=1575487585&w=678&h=381" alt="">
-                        </div>
-                    </div>
+                <img src="https://image.cnbcfm.com/api/v1/image/106278717-1575487551656screenshot2019-12-04at2.25.16pm.png?v=1575487585&w=678&h=381" alt="" >
+                <div class="location-content"> 
+                    <h2 class="text-uppercase">View of your Location</h2>
+                    <h4 class="long">Longitude: 222</4>
+                    <h4 class="lat">Latitude: 222</h4>
                 </div>
             </div>
         </div>
 
-        <div class="container conditions-info">
-            <h1 class="crop-title">Weather & Crop <br> Growing Conditions</h1>
-            <hr>
+        <div class="container-fluid conditions-info">
+            <h1 class="crop-title text-uppercase">Your Crop<br> Growth Conditions</h1>
             <div class="row justify-content-center" style='padding-bottom: 25px;'>
                 
                 <div class="col-6 col-lg-3 col-md-6">
                     <div class="card">
                         <div class="card-image">
-                            <img src="assets/img/temperature.png" alt="Umbrella Icon">
+                            <img src="assets/info-img/temperature.jpg" alt="thermometer" class="img-fluid">
                         </div>
 
-                        <div class="card-body overlay">
+                        <div class="card-body">
                             <h5 class="card-title">Temperature</h5>
                             <p class="card-text">300 to 500 *F</p>
                         </div>
@@ -70,7 +68,7 @@
                 <div class="col-6 col-lg-3 col-md-6">
                     <div class="card" >
                         <div class="card-image">
-                            <img src="assets/img/soil.png" alt="Umbrella Icon">
+                            <img src="assets/info-img/soil.jpg" alt="soil"class="img-fluid">
                         </div>
 
                         <div class="card-body overlay">
@@ -82,7 +80,7 @@
                 <div class="col-6 col-lg-3 col-md-6">
                     <div class="card" >
                         <div class="card-image">
-                            <img src="assets/img/water.png" alt="">
+                            <img src="assets/info-img/rain.jpg" alt="rain" class="img-fluid">
                         </div>
 
                         <div class="card-body overlay">
@@ -94,7 +92,7 @@
                 <div class="col-6 col-lg-3 col-md-6">
                     <div class="card" >
                         <div class="card-image">
-                            <img src="assets/img/sun.png" alt="">
+                            <img src="assets/info-img/sunlight.jpg" alt="sunlight" class="img-fluid">
                         </div>
 
                         <div class="card-body overlay">
@@ -106,8 +104,10 @@
             </div>
         </div>
         
-        <div id="cropsToGrow">
-
+        <div class="container">
+            <div class="row" id="veggies">
+               
+            </div>
         </div>
         
         <footer>
@@ -121,6 +121,6 @@
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script src="veggies.js"></script>
+        <script src="veggie2.js"></script>
     </body>
 </html>

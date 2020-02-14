@@ -1,7 +1,8 @@
 body {
     box-sizing: border-box;
     margin: 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'PT Serif', serif;
+    
     
 }
 
@@ -10,13 +11,40 @@ body {
     font-size: 50px;
     font-weight: bold;
     text-align: center;
+    font-family: 'Raleway', sans-serif;
+    padding: 10px;
 }
 
 .navbar {
     display: flex;
     justify-content: space-evenly;
+
 }
 
+.navbar .navbar-nav .nav-item{
+    list-style: none;
+}
+
+.navbar-nav li {
+    display: inline-block;
+    padding: 0px 20px;
+
+}
+
+.nav-item a {
+    text-align: center;
+    transition: all 0.3s ease 0s;
+    color: black;
+    font-size: 20px;
+}
+
+.nav-item a:hover {
+    background-color: #00e676;
+    border-radius: 80px;
+    padding: 15px;
+
+
+}
 .navbar-brand img {
     border-radius: 50%;
     background-color: white;
@@ -32,6 +60,7 @@ body {
 .about-area .about-title {
     text-align: center;
     margin-top: 25px;
+    font-family: 'Raleway', sans-serif;
 
 }
 
@@ -45,12 +74,17 @@ body {
 
 .carousel-inner {
     box-shadow: 10px 10px 10px;
+    border-radius: 5%;
 }
+
+
 /* Conditions Section  */
+
 .crops-info {
-    background-color:#8bc34a;
+    background-color: #2ECC71;
     width: 100%;
     margin: 40px 0;
+    padding-bottom: 40px;
 }
 
 
@@ -58,16 +92,40 @@ body {
     font-weight: bold;
     text-align: center;
     padding-top: 40px;
-    /* background-color: white; */
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 50px;
 }
 
+.crop-button {
+    border-radius: 80px;
+    background-color: orange;
+    color: white;
+}
 .button {
     padding: 25px;
+}
+
+.card {
+    border-radius: 5%;
+    padding: 15px;
+
+}
+.card:hover {
+    border-radius: 10%;
+    background-color: #0B5345 ;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+    color: white;
+    transition: 1.0s ease-in-out;
+    transform: scale(1.2);
 }
 
 .card-title {
     font-weight: bold;
     text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    letter-spacing: 2px;
 }
 
 .card-text {
@@ -78,6 +136,9 @@ body {
     display: block;
     margin: auto;
     padding: 25px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 25px;
     
 }
 
@@ -85,6 +146,8 @@ body {
 /* Market Section  */
 .market-info h1 {
     font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+
 }
 
 .market-info img {
@@ -101,14 +164,37 @@ body {
 }
 
 
-.market-p-title {
+.market-title {
     padding: 10px;
 }
 
-.market-p-title h4 {
+.market-title h3 {
     padding: 20px;
+    font-weight: bold;
+
 }
 
+.market-button {
+    border-radius: 80px;
+    background-color:#00e676;
+    color: white;
+}
+
+.market-grow {
+    animation-name: grow-text;
+    animation-timing-function: ease-in-out;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    
+}
+
+@keyframes grow-text {
+    0% {font-size: 25px;}
+    100% { font-size: 40px;}
+}
+
+/* Footer Information */
 footer {
     width: 100%;
     margin-top: 50px;
