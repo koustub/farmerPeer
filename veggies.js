@@ -5,7 +5,8 @@ let ArrOfVeggies = [
         minTemp : 5,
         maxTemp : 24,
         timeToGrow : 70,
-        gallonsOfWaterPerWeek : 2
+        gallonsOfWaterPerWeek : 2,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
 
     },
     {   id:2,
@@ -14,7 +15,9 @@ let ArrOfVeggies = [
         minTemp : 5,
         maxTemp : 24,
         timeToGrow : 50,
-        gallonsOfWaterPerWeek : 1
+        gallonsOfWaterPerWeek : 1,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
+
     },
     {   id:3,
         name:'Broccoli',
@@ -22,7 +25,9 @@ let ArrOfVeggies = [
         minTemp : 5,
         maxTemp : 24,
         timeToGrow : 125,
-        gallonsOfWaterPerWeek : 1
+        gallonsOfWaterPerWeek : 1,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
+
     },
     {   id:4,
         name:'Cabbage',
@@ -30,7 +35,9 @@ let ArrOfVeggies = [
         minTemp : 5,
         maxTemp : 24,
         timeToGrow : 120,
-        gallonsOfWaterPerWeek : 1
+        gallonsOfWaterPerWeek : 1,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
+
     },
     {   id:5,
         name:'Carrot',
@@ -38,7 +45,9 @@ let ArrOfVeggies = [
         minTemp : 5,
         maxTemp : 24,
         timeToGrow : 75,
-        gallonsOfWaterPerWeek : 2
+        gallonsOfWaterPerWeek : 2,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
+
     },
     {   id:6,
         name:'Corn',
@@ -46,7 +55,9 @@ let ArrOfVeggies = [
         minTemp : 10,
         maxTemp : 27,
         timeToGrow : 80,
-        gallonsOfWaterPerWeek : 2
+        gallonsOfWaterPerWeek : 2,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
+
     },
     {   id:7,
         name:'Egg Plant',
@@ -54,7 +65,9 @@ let ArrOfVeggies = [
         minTemp : 18,
         maxTemp : 25,
         timeToGrow : 80,
-        gallonsOfWaterPerWeek : 2
+        gallonsOfWaterPerWeek : 2,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
+
     },
     {   id:8,
         name:'Spinach',
@@ -62,7 +75,9 @@ let ArrOfVeggies = [
         minTemp : 5,
         maxTemp : 24,
         timeToGrow : 50,
-        gallonsOfWaterPerWeek : 1
+        gallonsOfWaterPerWeek : 1,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
+
     },
     {   id:9,
         name:'Tomato',
@@ -70,7 +85,9 @@ let ArrOfVeggies = [
         minTemp : 18,
         maxTemp : 27,
         timeToGrow : 85,
-        gallonsOfWaterPerWeek : 1
+        gallonsOfWaterPerWeek : 1,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
+
     },
     {
         id:10,
@@ -79,7 +96,9 @@ let ArrOfVeggies = [
         minTemp : 15,
         maxTemp : 22,
         timeToGrow : 60,
-        gallonsOfWaterPerWeek :1
+        gallonsOfWaterPerWeek :1,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
+
     },
     {
         id:11,
@@ -88,7 +107,9 @@ let ArrOfVeggies = [
         minTemp : 10,
         maxTemp : 25,
         timeToGrow : 25,
-        gallonsOfWaterPerWeek :1
+        gallonsOfWaterPerWeek :1,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
+
     },
     {
         id:12,
@@ -97,7 +118,9 @@ let ArrOfVeggies = [
         minTemp : 12,
         maxTemp : 28,
         timeToGrow : 55,
-        gallonsOfWaterPerWeek :0.5
+        gallonsOfWaterPerWeek :0.5,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
+
     },
     {
         id:13,
@@ -106,7 +129,9 @@ let ArrOfVeggies = [
         minTemp : 15,
         maxTemp : 21,
         timeToGrow : 140,
-        gallonsOfWaterPerWeek :3
+        gallonsOfWaterPerWeek :3,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
+
     },
     {
         id:14,
@@ -115,7 +140,9 @@ let ArrOfVeggies = [
         minTemp : 15,
         maxTemp : 29,
         timeToGrow : 60,
-        gallonsOfWaterPerWeek :0.004
+        gallonsOfWaterPerWeek :1,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
+
     },
     {
         id:15,
@@ -124,7 +151,9 @@ let ArrOfVeggies = [
         minTemp : 15,
         maxTemp : 18,
         timeToGrow : 90,
-        gallonsOfWaterPerWeek :1 /*Weird  */
+        gallonsOfWaterPerWeek :1 ,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
+/*Weird  */
     },
     {
         id:16,
@@ -133,7 +162,10 @@ let ArrOfVeggies = [
         minTemp : 20,
         maxTemp : 25,
         timeToGrow : 30,
-        gallonsOfWaterPerWeek :1.6 
+        gallonsOfWaterPerWeek :1.6,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
+
+
     },
     {
         id:17,
@@ -142,7 +174,9 @@ let ArrOfVeggies = [
         minTemp : 21,
         maxTemp : 32,
         timeToGrow : 90,
-        gallonsOfWaterPerWeek :0.004 
+        gallonsOfWaterPerWeek :0.004,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
+
     },
     {
         id:18,
@@ -151,7 +185,9 @@ let ArrOfVeggies = [
         minTemp : 15,
         maxTemp : 18,
         timeToGrow : 100,
-        gallonsOfWaterPerWeek :2
+        gallonsOfWaterPerWeek :2,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
+
     },
     {
         id:19,
@@ -160,7 +196,9 @@ let ArrOfVeggies = [
         minTemp : 18,
         maxTemp : 26,
         timeToGrow : 90,
-        gallonsOfWaterPerWeek :0.004
+        gallonsOfWaterPerWeek :0.004,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
+
     },
     {
         id:20,
@@ -169,7 +207,9 @@ let ArrOfVeggies = [
         minTemp : 4,
         maxTemp : 15,
         timeToGrow : 85,
-        gallonsOfWaterPerWeek :1.5
+        gallonsOfWaterPerWeek :1.5,
+        veggieimg : 'assets/veggies-img/beetroot.jpg'
+
     },
 
 ];
