@@ -56,27 +56,35 @@ body {
 .satellite-info .container{
     position: relative;
     margin: 0 auto; /* Center it */
+    padding-left: 0;
+    padding-right: 0;
   
 }
 
 .satellite-info img{
-    margin: 25px 0; 
+    margin-top: 25px; 
     width: 100%;
 }
 
 .satellite-info .container .location-content {
     text-align: center;
     font-family: 'Raleway', sans-serif;
-    font-weight: bold;
     bottom: 0; /* At the bottom. Use top:0 to append it to the top */
-    background: rgba(0, 0, 0, 1); /* Black background with 0.5 opacity */
-    color: #f1f1f1; /* Grey text */
+    background: rgba(255, 255, 255, 0.9); /* Black background with 0.5 opacity */
+    color: black; /* Grey text */
     width: 100%; /* Full width */
     padding: 20px; /* Some padding */
-
+    position: absolute;
+    
 }
 
+.satellite-info .container .location-content h2 {
+    font-weight: bold;
+}
 
+.satellite-info .container .location-content h4 {
+    font-family: 'PT Serif', serif;
+}
 
 
 /* Crop Section  */
@@ -95,6 +103,8 @@ body {
     text-align: center;
     transition: 0.5s ease;
     cursor: pointer;
+    border-radius: 20px;
+    margin-bottom: 20px;
     
 
 }
@@ -142,11 +152,14 @@ body {
 .card-text {
     text-align: center;
     color: black;
+    font-size: 20px;
+    font-family: 'PT Serif', serif;
 
 }
 
 .card-image img{ 
-    padding: 15px; 
+    width: 100%;
+    border-radius: 20px 20px 0 0;
 }
 
 /* Farmer's Veggies Section  */
