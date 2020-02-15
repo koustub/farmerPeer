@@ -1,6 +1,6 @@
 let veggiesArr = [
     {   id:1,
-        name:'Green Beans',
+        name:'Beans',
         type : 'hardy',
         minTemp : 5,
         maxTemp : 24,
@@ -10,7 +10,7 @@ let veggiesArr = [
 
     },
     {   id:2,
-        name:'Beetroot',
+        name:'Beets',
         type : 'half-hardy',
         minTemp : 5,
         maxTemp : 24,
@@ -37,7 +37,7 @@ let veggiesArr = [
         veggieImg: "assets/veggies-img/cabbage.jpg"
     },
     {   id:5,
-        name:'Carrot',
+        name:'Carrots',
         type : 'hardy',
         minTemp : 5,
         maxTemp : 24,
@@ -46,7 +46,7 @@ let veggiesArr = [
         veggieImg: "assets/veggies-img/carrots.jpg"
     },
     {   id:6,
-        name:'Corn',
+        name:'Sweet Corn',
         type : 'tender',
         minTemp : 10,
         maxTemp : 27,
@@ -55,7 +55,7 @@ let veggiesArr = [
         veggieImg: "assets/veggies-img/corn.jpg"
     },
     {   id:7,
-        name:'EggPlant',
+        name:'Eggplant',
         type : 'hardy',
         minTemp : 18,
         maxTemp : 25,
@@ -73,7 +73,7 @@ let veggiesArr = [
         veggieImg: "assets/veggies-img/spinach.jpg"
     },
     {   id:9,
-        name:'Tomato',
+        name:'Tomatoes',
         type : 'tender',
         minTemp : 18,
         maxTemp : 27,
@@ -83,7 +83,7 @@ let veggiesArr = [
     },
     {
         id:10,
-        name:'Cucumber',
+        name:'Cucumbers',
         type:'extreme tender',
         minTemp : 15,
         maxTemp : 22,
@@ -124,7 +124,7 @@ let veggiesArr = [
     },
     {
         id:14,
-        name:'Squash',
+        name:'Summer Squash',
         type:'tender', 
         minTemp : 15,
         maxTemp : 29,
@@ -145,7 +145,7 @@ let veggiesArr = [
     },
     {
         id:16,
-        name:'Onions',
+        name:'Onion',
         type:'hardy', 
         minTemp : 20,
         maxTemp : 25,
@@ -178,7 +178,7 @@ let veggiesArr = [
     },
     {
         id:19,
-        name:'Pepper',
+        name:'Bell Peppers',
         type:'tender', 
         minTemp : 18,
         maxTemp : 26,
@@ -189,7 +189,7 @@ let veggiesArr = [
     },
     {
         id:20,
-        name:'Collard',
+        name:'Collard Greens',
         type:'hardy', 
         minTemp : 4,
         maxTemp : 15,
@@ -200,6 +200,9 @@ let veggiesArr = [
     },
 
 ];
+
+var farmersCrop = [];
+
 
 // SCRIPT TO GET USER LOCATION, CREATE POLYGON, GET POLYGON ID, GET DATA FOR POLYGON, AND COVERT THAT DATA INTO VARs
 // SCRIPT TO GET USER LOCATION, CREATE POLYGON, GET POLYGON ID, GET DATA FOR POLYGON, AND COVERT THAT DATA INTO VARs
@@ -369,11 +372,7 @@ function showUvIndex(response) {
                         // API SCRIPT STOPS HERE!
 
 
-
-
-
-var plantType = ("");
-var farmersCrop = [];
+var plantType = (""); // WHHHHAT IS THIIISSISISISISISIS?????????????????????
 
 function plantsToGrow() {   
     console.log('running plantsToGrow')
@@ -382,6 +381,7 @@ function plantsToGrow() {
     // var soilMoisture = prompt('Soil Moisture in your location');
   
 
+    var plantType = "";
     for ( var i = 0; i < veggiesArr.length ; i++) {
         console.log('i have entered first for loop');
 
@@ -439,9 +439,39 @@ function plantsToGrow() {
             }   
         }
     }
-    
+    //CALL growthApi
+    growthApi();      
 }
 
+function growthApi(){
+    $.ajax({
+        url:"http://harvesthelper.herokuapp.com/api/v1/plants?api_key=324ce6305a7559e91581645b9ae72c7c",
+        method: "GET"
+    }).then(function (response){
+        //goes through the response object
+        for (var i = 0; i < 45; i++){
+            //goes through farmers crop section
+            for(var j = 0; j <farmersCrop.length; j++){
+                
+               if(response[i].name == farmersCrop[j]){
+
+                //console.log needs to be changed to whatever container that u are putting the information in -----> .append()
+                console.log(response[i].name);
+                console.log(response[i].description);
+                console.log(response[i].optimal_sun);
+                console.log(response[i].optimal_soil);
+                console.log(response[i].planting_considerations);
+                console.log(response[i].when_to_plant);
+                console.log(response[i].spacing);
+                console.log(response[i].disease);
+                console.log(response[i].watering);
+               }
+            }
+        }
+            
+    });
+}
+                
 
 
 
