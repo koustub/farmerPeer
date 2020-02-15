@@ -216,6 +216,7 @@ let temp;
 let uvIndex;
 let latitude;
 let longitude;
+let sampleLocations;
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -229,11 +230,16 @@ getLocation();
 function showPosition(position) {
       latitude = (position.coords.latitude);
       longitude = (position.coords.longitude);
-    const sampleLocations = [
-      // { name: 'San Francisco', lat: 37.7749, long: -122.4194 },
-      // { name: 'New York', lat: 40.7128, long: -74.0060 },
-      { name: 'currentLocation', lat: Number(latitude), long: Number(longitude) }
+      sampleLocations = [
+    //   { name: 'Mexico City', lat: 19.4326, long: -99.1332 },
+    //   { name: 'New York', lat: 40.7128, long: -74.0060 },
+      { name: 'Houston', lat: 29.7604, long: -95.3698 },
+    //   { name: 'Denver', lat: 39.7392, long: -104.9903 },
+    //   { name: 'currentLocation', lat: Number(latitude), long: Number(longitude) }
     ]
+    latitude = Number(sampleLocations[0].lat);
+      longitude = Number(sampleLocations[0].long);
+
     $(".long").text(`Longitude: ${longitude}`)
     $(".lat").text(`Latitude: ${latitude}`)
     console.log(`latitude: ${latitude}, longitude: ${longitude}`);
@@ -336,7 +342,8 @@ function soilData(response){
 }
 
 function weatherData(response) {
-  temp = Math.round(response.main.temp-273.15);
+    console.log(response);
+      temp = Math.round(response.main.temp-273.15);
   $("#temp").html(`${temp} &#8451;`);
   console.log(`Temperature: ${temp}`);
 
@@ -354,6 +361,7 @@ function showSateliteImage(response) {
 function showUvIndex(response) {
   uvIndex = response.uvi;
   $("#uv").text(`${uvIndex}`);
+  plantsToGrow();
 
 }
                         // API SCRIPT STOPS HERE!
@@ -362,14 +370,17 @@ function showUvIndex(response) {
 
 
 
-plantsToGrow();
+
+
+var plantType = ("");
+var farmersCrop = [];
 
 function plantsToGrow() {   
+    console.log('running plantsToGrow')
     // var temp = prompt("Temperature of your Area");
     // var humidity = prompt('Humidity');
     // var soilMoisture = prompt('Soil Moisture in your location');
-    var plantType = "";
-    var farmersCrop = [];
+  
 
     for ( var i = 0; i < veggiesArr.length ; i++) {
         console.log('i have entered first for loop');
@@ -395,6 +406,7 @@ function plantsToGrow() {
             }
         }
     }
+  
 
 
     var displayCrops = document.getElementById('veggies');
@@ -413,7 +425,7 @@ function plantsToGrow() {
                     var waterForPlant = veggiesArr[j].gallonsOfWaterPerWeek 
                 }
 
-
+                console.log('displaying farmer crops');
              displayCrops.innerHTML +=
                 `
                 <div class="col-6 col-md-8 col-lg-3 veggies-card">
@@ -429,6 +441,7 @@ function plantsToGrow() {
     }
     
 }
+
 
 
 
