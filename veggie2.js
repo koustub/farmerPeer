@@ -156,24 +156,24 @@ let veggiesArr = [
     },
     {
         id:17,
-        name:'Muskmelon',
-        type:'tender', 
-        minTemp : 21,
-        maxTemp : 32,
-        timeToGrow : 90,
-        gallonsOfWaterPerWeek :0.004,
-        veggieImg: "assets/veggies-img/melon.jpg"
+        name:'Potatoes',
+        type:'hardy', 
+        minTemp : 15,
+        maxTemp : 26,
+        timeToGrow : 120,
+        gallonsOfWaterPerWeek :0.03,
+        veggieImg: "assets/veggies-img/potatoes.jpg"
 
     },
     {
         id:18,
-        name:'Endives',
-        type:'half-hardy', 
-        minTemp : 15,
-        maxTemp : 18,
-        timeToGrow : 100,
-        gallonsOfWaterPerWeek :2,
-        veggieImg: "assets/veggies-img/endives.jpg"
+        name:'Mint',
+        type:'hardy', 
+        minTemp : 13,
+        maxTemp : 21,
+        timeToGrow : 90,
+        gallonsOfWaterPerWeek :0.02,
+        veggieImg: "assets/veggies-img/mint.jpg"
 
     },
     {

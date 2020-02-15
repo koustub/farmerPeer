@@ -31,18 +31,17 @@ body {
 
 }
 
-.nav-item a {
+.nav-item .nav-link {
     text-align: center;
-    transition: all 0.3s ease 0s;
-    color: black;
-    font-size: 20px;
+    transition: all 0.5s ease 0s;
+   font-size: 20px;
 }
 
-.nav-item a:hover {
-    background-color: #00e676;
+.nav-item .nav-link:hover {
+    padding: 15px 45px;
     border-radius: 80px;
-    padding: 15px;
-
+    color: white;
+    background: #4a9954;
 
 }
 
@@ -92,6 +91,8 @@ body {
     width: 100%;
     padding: 50px;
     font-family: 'Raleway', sans-serif;
+    /* background-color: #4a9954;
+    background-image: linear-gradient(240deg, #4a9954 20%, #233329 50%); */
 
 }
 .card {
@@ -134,7 +135,7 @@ body {
 .crop-title {
     font-weight: bold;
     text-align: center;
-    color:green;
+    color:white;
     padding-bottom: 35px;
 }
 
@@ -192,6 +193,7 @@ body {
 .veggies-text {
     text-align: center;
 }
+
 
 footer {
     width: 100%;
