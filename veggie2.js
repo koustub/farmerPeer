@@ -156,24 +156,24 @@ let veggiesArr = [
     },
     {
         id:17,
-        name:'Muskmelon',
-        type:'tender', 
-        minTemp : 21,
-        maxTemp : 32,
-        timeToGrow : 90,
-        gallonsOfWaterPerWeek :0.004,
-        veggieImg: "assets/veggies-img/melon.jpg"
+        name:'Potatoes',
+        type:'hardy', 
+        minTemp : 15,
+        maxTemp : 26,
+        timeToGrow : 120,
+        gallonsOfWaterPerWeek :0.03,
+        veggieImg: "assets/veggies-img/potatoes.jpg"
 
     },
     {
         id:18,
-        name:'Endives',
-        type:'half-hardy', 
-        minTemp : 15,
-        maxTemp : 18,
-        timeToGrow : 100,
-        gallonsOfWaterPerWeek :2,
-        veggieImg: "assets/veggies-img/endives.jpg"
+        name:'Mint',
+        type:'hardy', 
+        minTemp : 13,
+        maxTemp : 21,
+        timeToGrow : 90,
+        gallonsOfWaterPerWeek :0.02,
+        veggieImg: "assets/veggies-img/mint.jpg"
 
     },
     {
@@ -234,6 +234,8 @@ function showPosition(position) {
       // { name: 'New York', lat: 40.7128, long: -74.0060 },
       { name: 'currentLocation', lat: Number(latitude), long: Number(longitude) }
     ]
+    $(".long").text(`Longitude: ${longitude}`)
+    $(".lat").text(`Latitude: ${latitude}`)
     console.log(`latitude: ${latitude}, longitude: ${longitude}`);
     // loop through sample data and get info
     sampleLocations.forEach( requestPolygonId )
@@ -247,10 +249,10 @@ function requestPolygonId( city ){
   if( polygonCache[city] && polygonCache[city].long )
     return polygonCache[city];
 
-  let lonAdd = (city.long+0.02);
-  let lonMin = (city.long-0.02);
-  let latAdd = (city.lat+0.01);
-  let latMin = (city.lat-0.01);
+  let lonAdd = (city.long + 0.02);
+  let lonMin = (city.long - 0.02);
+  let latAdd = (city.lat + 0.01);
+  let latMin = (city.lat - 0.01);
 
   console.log( `.. requesting agro polygon...` );
   const url = 'http://api.agromonitoring.com/agro/1.0/polygons?appid=78dc899eb37cab91867a345825f4223c';
@@ -281,9 +283,8 @@ function requestPolygonId( city ){
     data: JSON.stringify( data ),
     contentType: "application/json; charset=utf-8"
   })
-    .then( function( response ){ submitPolygonId( response, city ); } );
+    .then( function( response ){ submitPolygonId( response, city ); });
 }
-
 
 function submitPolygonId(response,city) {
     console.log(`[submitPolygonId] city(${city}), response: `, response);
@@ -294,6 +295,7 @@ function submitPolygonId(response,city) {
     getSateliteImage(response);
     getUvIndex(response);
 }
+
 // functions to send polygon it and retreive objects with data (soil data, weather, satelite image)
 function getSoilData(response) {
     $.ajax({
@@ -301,18 +303,21 @@ function getSoilData(response) {
                 method: "GET"
             }).then(soilData);
 }
+
 function getWeatherData() {
     $.ajax({
                 url: `http://api.openweathermap.org/data/2.5/weather?lat=${Math.round(latitude)}&lon=${Math.round(longitude)}&appid=748ff1a0b719ff81bb15bda076c9541d`,
                 method: "GET"
             }).then(weatherData);
 }
+
 function getSateliteImage(response) {
     $.ajax({
                 url: `http://api.agromonitoring.com/agro/1.0/image/search?start=1414819564&end=1577891564&resolution_min=1000&&clouds_max=10&polyid=${response.id}&appid=78dc899eb37cab91867a345825f4223c`,
                 method: "GET"
             }).then(showSateliteImage);
 }
+
 function getUvIndex(response) {
     $.ajax({
                 url: `http://api.agromonitoring.com/agro/1.0/uvi?polyid=${response.id}&appid=78dc899eb37cab91867a345825f4223c`,
@@ -322,36 +327,42 @@ function getUvIndex(response) {
 
 // functions to convert retreived data into variables/ append satelite image
 function soilData(response){
-    console.log(response);
-     soilTemp = Math.round(response.t0-273.15);
+    //soilTemp = Math.round(response.t0-273.15);
     //  celcius10 = Math.round(response.t10-273.15);
-     soilMoisture = response.moisture;
-    console.log(`soil temp: ${temp}`);
-    console.log(`moisture: ${response.moisture}`);
+    //console.log(`soil temp: ${soilTemp}`);
+    soilMoisture = response.moisture;
+    $("#soilMoisture").text(`${soilMoisture}`)
 
 }
+
 function weatherData(response) {
   temp = Math.round(response.main.temp-273.15);
+  $("#temp").html(`${temp} &#8451;`);
   console.log(`Temperature: ${temp}`);
 
+
   humidity = response.main.humidity;
-  console.log(`Humidity: ${response.main.humidity}`);
+  $("#humidity").text(`${humidity}`);
 }
+
 function showSateliteImage(response) {
   // console.log(response);
   let arrayLength = response.length-1
   $('#satImage').attr( 'src', response[arrayLength].image.truecolor);
 }
+
 function showUvIndex(response) {
   uvIndex = response.uvi;
-  console.log(`uv index: ${response.uvi}`);
+  $("#uv").text(`${uvIndex}`);
+
 }
                         // API SCRIPT STOPS HERE!
                         // API SCRIPT STOPS HERE!
                         // API SCRIPT STOPS HERE!
 
-plantsToGrow();
 
+
+plantsToGrow();
 
 function plantsToGrow() {   
     // var temp = prompt("Temperature of your Area");
