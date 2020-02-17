@@ -203,3 +203,9 @@ footer {
     justify-content: space-evenly;
     padding: 30px 0px;
 }
+#cityBtns {
+    width: fit-content;
+    display: block;
+    margin: auto;
+    margin-top: 3%;
+}

@@ -201,7 +201,7 @@ let veggiesArr = [
 
 ];
 
-var farmersCrop = [];
+
 
 
 // SCRIPT TO GET USER LOCATION, CREATE POLYGON, GET POLYGON ID, GET DATA FOR POLYGON, AND COVERT THAT DATA INTO VARs
@@ -219,7 +219,7 @@ let temp;
 let uvIndex;
 let latitude;
 let longitude;
-let sampleLocations;
+let sampleLocations ;
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -230,15 +230,47 @@ function getLocation() {
 }
 getLocation();
 
+
+
+function showMexicoCity(){
+    console.log('Showing mexico');
+    sampleLocations = [{ name: 'Mexico City', lat: 19.4326, long: -99.1332 }];
+    latitude = Number(sampleLocations[0].lat);
+    longitude = Number(sampleLocations[0].long);
+    sampleLocations.forEach( requestPolygonId )
+}
+document.getElementById('Mexico').addEventListener('click', showMexicoCity);
+
+function showHouston(){
+    console.log('Showing Houston');
+    document.getElementById('veggies').innerHTML="";
+    sampleLocations = [{ name: 'Houston', lat: 29.7604, long: -95.3698 }];
+    latitude = Number(sampleLocations[0].lat);
+    longitude = Number(sampleLocations[0].long);
+    sampleLocations.forEach( requestPolygonId );
+}
+document.getElementById('Houston').addEventListener('click', showHouston);
+
+function showLasVegas(){
+    console.log('Las Vegas');
+    document.getElementById('veggies').innerHTML="";
+    sampleLocations = [{ name: 'Las Vegas', lat: 36.1699, long: -115.1398 }];
+    latitude = Number(sampleLocations[0].lat);
+    longitude = Number(sampleLocations[0].long);
+    sampleLocations.forEach( requestPolygonId );
+}
+document.getElementById('lasVegas').addEventListener('click', showLasVegas);
+
 function showPosition(position) {
       latitude = (position.coords.latitude);
       longitude = (position.coords.longitude);
       sampleLocations = [
     //   { name: 'Mexico City', lat: 19.4326, long: -99.1332 },
     //   { name: 'New York', lat: 40.7128, long: -74.0060 },
-      { name: 'Houston', lat: 29.7604, long: -95.3698 },
+    //   { name: 'Houston', lat: 29.7604, long: -95.3698 },
     //   { name: 'Denver', lat: 39.7392, long: -104.9903 },
-    //   { name: 'currentLocation', lat: Number(latitude), long: Number(longitude) }
+      { name: 'currentLocation', lat: Number(latitude), long: Number(longitude) }
+    
     ]
     latitude = Number(sampleLocations[0].lat);
       longitude = Number(sampleLocations[0].long);
@@ -356,9 +388,15 @@ function weatherData(response) {
 }
 
 function showSateliteImage(response) {
-  // console.log(response);
+  console.log(response);
   let arrayLength = response.length-1
-  $('#satImage').attr( 'src', response[arrayLength].image.truecolor);
+  
+  if (response.length===0){
+    // $('#satImage').attr( 'src', '' );
+    alert('No satelite image available!');
+  } else {
+    $('#satImage').attr( 'src', response[arrayLength].image.truecolor);
+  }
 }
 
 function showUvIndex(response) {
@@ -372,14 +410,17 @@ function showUvIndex(response) {
                         // API SCRIPT STOPS HERE!
 
 
-var plantType = (""); // WHHHHAT IS THIIISSISISISISISIS?????????????????????
+
 
 function plantsToGrow() {   
+    var farmersCrop = [];
+        farmersCrop.length = 0;
+        document.getElementById('veggies').innerHTML="";
     console.log('running plantsToGrow')
     // var temp = prompt("Temperature of your Area");
     // var humidity = prompt('Humidity');
     // var soilMoisture = prompt('Soil Moisture in your location');
-  
+    
 
     var plantType = "";
     for ( var i = 0; i < veggiesArr.length ; i++) {
@@ -387,13 +428,13 @@ function plantsToGrow() {
 
         //Checks if temperature is between min and max temp of each veggie
         if( (temp >= veggiesArr[i].minTemp) && (temp <= veggiesArr[i].maxTemp) ){  
-            if (humidity >= 0 && humidity <= 25) {
+            if (humidity >= 0 && humidity <= 50) {
                 plantType ='hardy';
 
-            } else if (humidity > 25 && humidity <= 50) {
+            } else if (humidity > 50 && humidity <= 70) {
                 plantType = 'half-hardy';
 
-            } else if (humidity > 50 && humidity < 75) {
+            } else if (humidity > 70 && humidity < 85) {
                 plantType = 'tender';
 
             } else {
@@ -410,6 +451,7 @@ function plantsToGrow() {
 
 
     var displayCrops = document.getElementById('veggies');
+    
     for (var i = 0; i < farmersCrop.length; i++) {
 
         for (var j= 0; j < veggiesArr.length; j++) {
@@ -426,6 +468,7 @@ function plantsToGrow() {
                 }
 
                 console.log('displaying farmer crops');
+            
              displayCrops.innerHTML +=
                 `
                 <div class="col-6 col-md-8 col-lg-3 veggies-card">
@@ -470,6 +513,7 @@ function growthApi(){
         }
             
     });
+
 }
                 
 
