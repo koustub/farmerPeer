@@ -409,9 +409,6 @@ function showUvIndex(response) {
                         // API SCRIPT STOPS HERE!
                         // API SCRIPT STOPS HERE!
 
-
-
-
 function plantsToGrow() {   
     var farmersCrop = [];
         farmersCrop.length = 0;
@@ -448,8 +445,6 @@ function plantsToGrow() {
         }
     }
   
-
-
     var displayCrops = document.getElementById('veggies');
     
     for (var i = 0; i < farmersCrop.length; i++) {
