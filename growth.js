@@ -26,7 +26,7 @@ function growthApi(){
                  console.log(response[i].watering);
 
                 var displayDiv = document.getElementById('plant1Info'); 
-                displayDiv.innerHTML =`
+                displayDiv.innerHTML +=`
                 <h1>${response[i].name}</h1>
                 <p><span id='sideHeadings'>Description :</span> ${response[i].description}<br><span id='sideHeadings'>Optimal-sun :</span> ${response[i].optimal_sun}<br>
                 <span id='sideHeadings'>Optimal-soil :</span> ${response[i].optimal_soil}<br><span id='sideHeadings'>Planting-Considerations :</span>${response[i].planting_considerations}<br>
