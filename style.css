@@ -8,7 +8,7 @@ body {
 
 /* Navbar */
 .h1-title{
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
     font-family: 'Raleway', sans-serif;
@@ -31,14 +31,14 @@ body {
 
 }
 
-.nav-item .nav-link {
+.navbar-nav .nav-item .nav-link {
     text-align: center;
     transition: all 0.5s ease 0s;
     color: black;
-    font-size: 20px;
+    font-size: 15px;
 }
 
-.nav-item .nav-link:hover {
+.navbar-nav .nav-item .nav-link:hover {
     padding: 15px 45px;
     border-radius: 80px;
     color: white;
@@ -47,15 +47,59 @@ body {
 
 }
 .navbar-brand img {
+    width: 60px;
     border-radius: 50%;
     background-color: white;
     padding: 10px;
 }
 
+/* Slider */
+/* #slider {
+    overflow: hidden;
+}
+#slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slider infinite;
+}
+
+@keyframes slider {
+    0% { 
+        left: 0;
+    }
+    20% {
+        left: 0;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+
+    75% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+}
+
+#slider figure img{
+    float: left;
+    width: 20%;
+} */
 /* About Section */
 .about-area {
-    margin-top: 35px;
-
+    margin: 100px 0;
 }
 
 .about-area .about-title {
@@ -66,7 +110,10 @@ body {
 }
 
 .about-area p {
+    margin-left: 25px;
     text-align: justify;
+    font-family: 'PT Serif', serif;
+    line-height: 30px;
 }
 
 .about-area .about-image img:hover {
@@ -126,6 +173,8 @@ body {
     transition: 1.0s ease-in-out;
     transform: scale(1.1);
     z-index: 1;
+    border: 2px solid white;
+
 }
 
 .card-title {
@@ -148,6 +197,44 @@ body {
     background-color: white;
     padding: 25px;
     
+}
+
+/* Farmer's Guide Section */
+.guide-info {
+    margin-bottom: 100px;
+}
+
+.guide-info h1 {
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.guide-info img {
+    margin: auto;
+    display: block;
+    padding: 15px 0;
+}
+
+.guide-para {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    line-height: 30px;
+
+
+}
+
+.guide-title {
+    padding: 10px;
+}
+
+
+.guide-button {
+    border-radius: 80px;
+    background-color:#00e676;
+    color: white;
 }
 
 
@@ -230,4 +317,5 @@ footer {
         font-size: 35px;
     }
 }
+
 
