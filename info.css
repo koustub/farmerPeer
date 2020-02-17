@@ -2,13 +2,12 @@ body {
     box-sizing: border-box;
     margin: 0;
     font-family: 'PT Serif', serif;
-    
-    
 }
+
 
 /* Navbar */
 .h1-title{
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
     font-family: 'Raleway', sans-serif;
@@ -17,8 +16,7 @@ body {
 
 .navbar {
     display: flex;
-    justify-content: space-evenly;
-
+    justify-content: space-evenly;  
 }
 
 .navbar .navbar-nav .nav-item{
@@ -28,16 +26,16 @@ body {
 .navbar-nav li {
     display: inline-block;
     padding: 0px 20px;
-
 }
 
-.nav-item .nav-link {
+.navbar-nav .nav-item .nav-link {
     text-align: center;
     transition: all 0.5s ease 0s;
-   font-size: 20px;
+    color: black;
+    font-size: 15px;
 }
 
-.nav-item .nav-link:hover {
+.navbar-nav .nav-item .nav-link:hover {
     padding: 15px 45px;
     border-radius: 80px;
     color: white;
@@ -46,57 +44,70 @@ body {
 }
 
 .navbar-brand img {
+    width: 60px;
     border-radius: 50%;
     background-color: white;
     padding: 10px;
 }
 
+
 /* Satellite Info */
-.satellite-info .container{
-    position: relative;
-    margin: 0 auto; /* Center it */
-    padding-left: 0;
-    padding-right: 0;
-  
+.satellite-info {
+    margin-top: 50px;
 }
 
-.satellite-info img{
-    margin-top: 25px; 
-    width: 100%;
+.satellite-info .satPara {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-.satellite-info .container .location-content {
-    text-align: center;
+.satellite-info .satPara h2 {
     font-family: 'Raleway', sans-serif;
-    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
-    background: rgba(255, 255, 255, 0.9); /* Black background with 0.5 opacity */
-    color: black; /* Grey text */
-    width: 100%; /* Full width */
-    padding: 20px; /* Some padding */
-    position: absolute;
-    
-}
-
-.satellite-info .container .location-content h2 {
+    padding: 10px;
     font-weight: bold;
+    text-align: center;
 }
 
-.satellite-info .container .location-content h4 {
+.satellite-info .satPara h4 {
     font-family: 'PT Serif', serif;
+
+
 }
+.satellite-info img{
+    margin: auto;
+    display: block;
+    padding: 15px 0;
+}
+
+
 
 
 /* Crop Section  */
 .conditions-info {
-    width: 100%;
+    margin-top: 50px;
+    background: #00bf8f; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #00bf8f, #001510); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #00bf8f, #001510); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding: 50px;
+    background-size: cover;
     font-family: 'Raleway', sans-serif;
-    /* background-color: #4a9954;
-    background-image: linear-gradient(240deg, #4a9954 20%, #233329 50%); */
+    margin-bottom: 50px;
 
 }
+
+.conditions-title {
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    letter-spacing: 5px;
+    font-size: 50px;
+
+}
+
 .card {
-    
+    border: 2px solid rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,49 +116,20 @@ body {
     transition: 0.5s ease;
     cursor: pointer;
     border-radius: 20px;
-    margin-bottom: 20px;
-    
+    margin: 40px;
 
 }
 
 .card:hover {
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+    box-shadow: 10px 10px 10px 5px rgba(255, 255, 255, 1);
 }
-/* .overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    border-radius: 10px;
-    transition: .5s ease;
-    background-color: #fbb034;
-    background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
-} */
-
-/* .card:hover .overlay {
-    opacity: 1;
-} */
-
-.crop-title {
-    font-weight: bold;
-    text-align: center;
-    color:white;
-    padding-bottom: 35px;
-}
-
 
 .card-title {
     font-weight: bold;
     text-align: center;
     color: black;
     font-family: 'Raleway', sans-serif;
-    letter-spacing: 2px;
     text-transform: uppercase;
-
 }
 
 .card-text {
@@ -155,42 +137,50 @@ body {
     color: black;
     font-size: 20px;
     font-family: 'PT Serif', serif;
-
 }
 
 .card-image img{ 
     width: 100%;
+    padding: 5px;
     border-radius: 20px 20px 0 0;
 }
 
 /* Farmer's Veggies Section  */
-
-.veggies {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.farmerV h1{
+    text-align: center;
+    background-color: wheat;
+    padding: 50px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 5px;
+    font-weight: bold;
 }
+
+
 .veggies-card {
     padding: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    border: 2px solid rgb(0, 36, 0);
+    border-radius: 10px;
 }
 
 .veggies-img {
     margin: auto;
-    display: block;
-    
+    display: block; 
+    border-radius: 5%;
+    padding-bottom: 10px;
 }
 
 .veggies-title {
     text-align: center;
     font-weight: bold;
-
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 3px;
 }
 
-.veggies-text {
+.veggies-card .veggies-text {
     text-align: center;
 }
 
@@ -202,4 +192,10 @@ footer {
     display: flex;
     justify-content: space-evenly;
     padding: 30px 0px;
+}
+#cityBtns {
+    width: fit-content;
+    display: block;
+    margin: auto;
+    margin-top: 3%;
 }

@@ -38,18 +38,28 @@
         </div>
 
         <div class="satellite-info">
+            <div id="cityBtns">
+                <button id="Mexico">Mexico</button>
+                <button id="Houston">Houston</button>
+                <button id="lasVegas">Las Vegas</button>
+            </div>
             <div class="container">
-                <img id="satImage" src="https://image.cnbcfm.com/api/v1/image/106278717-1575487551656screenshot2019-12-04at2.25.16pm.png?v=1575487585&w=678&h=381" alt="" >
-                <div class="location-content"> 
-                    <h2 class="text-uppercase">Coordinates (Satellite Image) </h2>
-                    <h4 class="long">Longitude: 222</4>
-                    <h4 class="lat">Latitude: 222</h4>
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-12 satPara">
+                        <h2 class="text-uppercase">Coordinates <br> (Satellite Image) </h2>
+                        <h4 class="long">Longitude: 222</4>
+                        <h4 class="lat">Latitude: 222</h4>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-12">
+                        <img id="satImage" src="https://image.cnbcfm.com/api/v1/image/106278717-1575487551656screenshot2019-12-04at2.25.16pm.png?v=1575487585&w=678&h=381" alt="" class="img-fluid" >
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="container-fluid conditions-info">
-            <h1 class="crop-title text-uppercase">Your Crop<br> Growth Conditions</h1>
+            <h1 class="conditions-title text-uppercase"> In-time Weather Data </h1>
+            <hr style="border: 1px solid #fffdf8; width: 50%;"/>
             <div class="row justify-content-center" style='padding-bottom: 25px;'>
                 
                 <div class="col-12 col-lg-3 col-md-6">
@@ -104,8 +114,9 @@
             </div>
         </div>
         
-        <div class="container">
-            <div class="row" id="veggies">
+        <div class="container farmerV">
+            <h1 class="text-uppercase">Suggested Crops for your Location </h1>
+            <div class="row d-flex justify-content-center" id="veggies">
                
             </div>
         </div>
