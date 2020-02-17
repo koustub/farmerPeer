@@ -201,9 +201,6 @@ let veggiesArr = [
 
 ];
 
-
-
-
 // SCRIPT TO GET USER LOCATION, CREATE POLYGON, GET POLYGON ID, GET DATA FOR POLYGON, AND COVERT THAT DATA INTO VARs
 // SCRIPT TO GET USER LOCATION, CREATE POLYGON, GET POLYGON ID, GET DATA FOR POLYGON, AND COVERT THAT DATA INTO VARs
 // SCRIPT TO GET USER LOCATION, CREATE POLYGON, GET POLYGON ID, GET DATA FOR POLYGON, AND COVERT THAT DATA INTO VARs
@@ -229,8 +226,6 @@ function getLocation() {
   }
 }
 getLocation();
-
-
 
 function showMexicoCity(){
     console.log('Showing mexico');
@@ -480,7 +475,7 @@ function plantsToGrow() {
         }
     }
     
-    localStorage.setItem('farmersCrop',JSON.stringify(farmersCrop));     
+    localStorage.setItem("farmersCrop",JSON.stringify(farmersCrop));     
 }
  
 
