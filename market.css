@@ -31,18 +31,18 @@ body {
 
 }
 
-.nav-item .nav-link {
+.navbar-nav .nav-item .nav-link {
     text-align: center;
     transition: all 0.5s ease 0s;
-   font-size: 15px;
+    color: black;
+    font-size: 15px;
 }
 
-.nav-item .nav-link:hover {
+.navbar-nav .nav-item .nav-link:hover {
     padding: 15px 45px;
     border-radius: 80px;
     color: white;
     background: #4a9954;
-
 }
 
 .navbar-brand img {
@@ -58,7 +58,6 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
 }
 
 

@@ -79,7 +79,7 @@ let veggiesArr = [
         maxTemp : 27,
         timeToGrow : 85,
         gallonsOfWaterPerWeek : 1,
-        veggieImg: "assets/veggies-img/tomatos.jpg"
+        veggieImg: "assets/veggies-img/tomatoes.jpg"
     },
     {
         id:10,
@@ -431,9 +431,11 @@ function plantsToGrow() {
                 <div class="col-6 col-md-8 col-lg-3 veggies-card">
                     <h5 class=" text-uppercase veggies-title">${veggiesArr[j].name}</h5>
                     <img src="${veggiesArr[j].veggieImg}" class="img-fluid veggies-img " >
-                    <p class="veggies-text">Plant Type :${veggiesArr[j].type}</p>
-                    <p class="veggies-text">Days to Grow :${veggiesArr[j].timeToGrow} Days</p>
-                    <p class="veggies-text">No of Gallons Per Week :${waterForPlant}</p>
+                    <p class="veggies-text"><strong>Plant Type:</strong> ${veggiesArr[j].type}</p>
+                    <p class="veggies-text"><strong>Days to Grow:</strong> ${veggiesArr[j].timeToGrow} Days</p>
+                    <p class="veggies-text"><strong>No of Gallons Per Week:</strong> ${waterForPlant}</p>
+                    <a href="growth.html" class="btn btn-outline-success mx-auto guide-button" role="button" aria-pressed="true" >Learn More</a>
+
                 </div> 
                 `
             }   
