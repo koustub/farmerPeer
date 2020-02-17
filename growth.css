@@ -88,7 +88,73 @@ body {
     font-family: 'PT Serif', serif;
 
 }
+.information {
+    margin: 15px 45px;
+    text-align: justify;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
 
+.information .text {
+    margin-left: 90px;
+}
+
+.information h1 {
+    padding: 15px;
+}
+
+.information .img img {
+    margin: auto;
+    display: block;
+}
+
+
+
+
+.plant1 {
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    
+    }
+.plant1::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+.plant1 .plant1Info {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+   
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+.plant1 h1{
+    font-size: 5em;
+    
+    font-weight: 700;
+    font-family: 'PT Serif', serif;
+    
+    
+}
+.plant1 p {
+    font-size: 20px;
+    font-family: 'PT Serif', serif;
+    text-align: left;
+    color: olivedrab; 
+   
+    
+
+}
+#sideHeadings{
+    color: olivedrab;
+}
 footer {
     width: 100%;
     margin-top: 50px;

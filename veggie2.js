@@ -466,7 +466,7 @@ function plantsToGrow() {
                 }else { 
                     var waterForPlant = veggiesArr[j].gallonsOfWaterPerWeek 
                 }
-
+                console.log(`${farmersCrop}`);
                 console.log('displaying farmer crops');
             
              displayCrops.innerHTML +=
@@ -480,44 +480,14 @@ function plantsToGrow() {
                     <a href="growth.html" class="btn btn-outline-success mx-auto guide-button" role="button" aria-pressed="true" >Learn More</a>
 
                 </div> 
-                `
+              `
             }   
         }
     }
-    //CALL growthApi
-    growthApi();      
+    
+    localStorage.setItem('farmersCrop',JSON.stringify(farmersCrop));     
 }
-
-function growthApi(){
-    $.ajax({
-        url:"http://harvesthelper.herokuapp.com/api/v1/plants?api_key=324ce6305a7559e91581645b9ae72c7c",
-        method: "GET"
-    }).then(function (response){
-        //goes through the response object
-        for (var i = 0; i < 45; i++){
-            //goes through farmers crop section
-            for(var j = 0; j <farmersCrop.length; j++){
-                
-               if(response[i].name == farmersCrop[j]){
-
-                //console.log needs to be changed to whatever container that u are putting the information in -----> .append()
-                console.log(response[i].name);
-                console.log(response[i].description);
-                console.log(response[i].optimal_sun);
-                console.log(response[i].optimal_soil);
-                console.log(response[i].planting_considerations);
-                console.log(response[i].when_to_plant);
-                console.log(response[i].spacing);
-                console.log(response[i].disease);
-                console.log(response[i].watering);
-               }
-            }
-        }
-            
-    });
-
-}
-                
+ 
 
 
 
