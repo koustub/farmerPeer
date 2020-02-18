@@ -241,57 +241,6 @@ body {
 }
 
 
-/* Market Section  */
-.market-info h1 {
-    font-weight: bold;
-    font-family: 'Raleway', sans-serif;
-
-}
-
-.market-info img {
-    margin: auto;
-    display: block;
-    padding: 15px 0;
-}
-
-.market-para {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-
-
-.market-title {
-    padding: 10px;
-}
-
-.market-title h3 {
-    padding: 20px;
-    font-weight: bold;
-
-}
-
-.market-button {
-    border-radius: 80px;
-    background-color:#00e676;
-    color: white;
-}
-
-.market-grow {
-    animation-name: grow-text;
-    animation-timing-function: ease-in-out;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    
-}
-
-@keyframes grow-text {
-    0% {font-size: 25px;}
-    100% { font-size: 40px;}
-}
-
 /* Footer Information */
 footer {
     width: 100%;

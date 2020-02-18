@@ -387,8 +387,7 @@ function showSateliteImage(response) {
   let arrayLength = response.length-1
   
   if (response.length===0){
-    // $('#satImage').attr( 'src', '' );
-    alert('No satelite image available!');
+    alert('No satellite image available!');
   } else {
     $('#satImage').attr( 'src', response[arrayLength].image.truecolor);
   }
@@ -406,14 +405,9 @@ function showUvIndex(response) {
 
 function plantsToGrow() {   
     var farmersCrop = [];
-        farmersCrop.length = 0;
-        document.getElementById('veggies').innerHTML="";
-    console.log('running plantsToGrow')
-    // var temp = prompt("Temperature of your Area");
-    // var humidity = prompt('Humidity');
-    // var soilMoisture = prompt('Soil Moisture in your location');
+    farmersCrop.length = 0;
+    document.getElementById('veggies').innerHTML="";    
     
-
     var plantType = "";
     for ( var i = 0; i < veggiesArr.length ; i++) {
         console.log('i have entered first for loop');
