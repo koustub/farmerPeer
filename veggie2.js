@@ -291,7 +291,7 @@ function requestPolygonId( city ){
   let latMin = (city.lat - 0.01);
 
   console.log( `.. requesting agro polygon...` );
-  const url = 'http://api.agromonitoring.com/agro/1.0/polygons?appid=78dc899eb37cab91867a345825f4223c';
+  const url = 'https://api.agromonitoring.com/agro/1.0/polygons?appid=78dc899eb37cab91867a345825f4223c';
   const data = {
         "name":`${city.name}_Polygon`,
         "geo_json":{
@@ -335,28 +335,28 @@ function submitPolygonId(response,city) {
 // functions to send polygon it and retreive objects with data (soil data, weather, satelite image)
 function getSoilData(response) {
     $.ajax({
-                url: `http://api.agromonitoring.com/agro/1.0/soil?polyid=${response.id}&appid=78dc899eb37cab91867a345825f4223c`,
+                url: `https://api.agromonitoring.com/agro/1.0/soil?polyid=${response.id}&appid=78dc899eb37cab91867a345825f4223c`,
                 method: "GET"
             }).then(soilData);
 }
 
 function getWeatherData() {
     $.ajax({
-                url: `http://api.openweathermap.org/data/2.5/weather?lat=${Math.round(latitude)}&lon=${Math.round(longitude)}&appid=748ff1a0b719ff81bb15bda076c9541d`,
+                url: `https://api.openweathermap.org/data/2.5/weather?lat=${Math.round(latitude)}&lon=${Math.round(longitude)}&appid=748ff1a0b719ff81bb15bda076c9541d`,
                 method: "GET"
             }).then(weatherData);
 }
 
 function getSateliteImage(response) {
     $.ajax({
-                url: `http://api.agromonitoring.com/agro/1.0/image/search?start=1414819564&end=1577891564&resolution_min=1000&&clouds_max=10&polyid=${response.id}&appid=78dc899eb37cab91867a345825f4223c`,
+                url: `https://api.agromonitoring.com/agro/1.0/image/search?start=1414819564&end=1577891564&resolution_min=1000&&clouds_max=10&polyid=${response.id}&appid=78dc899eb37cab91867a345825f4223c`,
                 method: "GET"
             }).then(showSateliteImage);
 }
 
 function getUvIndex(response) {
     $.ajax({
-                url: `http://api.agromonitoring.com/agro/1.0/uvi?polyid=${response.id}&appid=78dc899eb37cab91867a345825f4223c`,
+                url: `https://api.agromonitoring.com/agro/1.0/uvi?polyid=${response.id}&appid=78dc899eb37cab91867a345825f4223c`,
                 method: "GET"
             }).then(showUvIndex);
 }
