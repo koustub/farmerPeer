@@ -225,3 +225,10 @@ footer {
 #cityBtns button {
     border-radius: 80px;
 }
+
+#noVegAvb {
+    margin-top: 5%;
+    background-color: forestgreen;
+    color: white;
+    padding: 5%;
+}

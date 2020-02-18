@@ -469,6 +469,10 @@ function plantsToGrow() {
     }
     
     localStorage.setItem("farmersCrop",JSON.stringify(farmersCrop));     
+    if(farmersCrop.length===0) {
+        console.log('no vegetables');
+        displayCrops.innerHTML = '<h2 id="noVegAvb">Sorry no Vegetables available for your Area!</h2>'
+    }
 }
  
 
