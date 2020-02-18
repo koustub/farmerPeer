@@ -468,6 +468,7 @@ function plantsToGrow() {
                 }
                 console.log(`${farmersCrop}`);
                 console.log('displaying farmer crops');
+               
             
              displayCrops.innerHTML +=
                 `
@@ -477,8 +478,6 @@ function plantsToGrow() {
                     <p class="veggies-text"><strong>Plant Type:</strong> ${veggiesArr[j].type}</p>
                     <p class="veggies-text"><strong>Days to Grow:</strong> ${veggiesArr[j].timeToGrow} Days</p>
                     <p class="veggies-text"><strong>No of Gallons Per Week:</strong> ${waterForPlant}</p>
-                    <a href="growth.html" class="btn btn-outline-success mx-auto guide-button" role="button" aria-pressed="true" >Learn More</a>
-
                 </div> 
               `
             }   
