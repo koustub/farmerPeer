@@ -122,6 +122,7 @@ body {
     cursor: pointer;
     border-radius: 20px;
     margin: 40px;
+    
 
 }
 
@@ -151,16 +152,23 @@ body {
 }
 
 /* Farmer's Veggies Section  */
-.farmerV h1{
+.farmerV {
     text-align: center;
-    background-color: wheat;
-    padding: 50px;
+    background-color: rgb(0, 0, 0);
+    padding: 25px;
+    color: white;
+}
+
+.farmerV h1 {
+    padding-bottom: 25px;
     font-family: 'Raleway', sans-serif;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     font-weight: bold;
 }
 
-
+.farmerV a {
+    border-radius: 80px;
+}
 .veggies-card {
     padding: 15px;
     display: flex;
@@ -169,6 +177,13 @@ body {
     flex-direction: column;
     border: 2px solid rgb(0, 36, 0);
     border-radius: 10px;
+    margin: 35px;
+}
+
+.veggies-card:hover {
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+    transition: 1.0s ease-in-out;
+    transform: scale(1.1);
 }
 
 .veggies-img {
@@ -187,6 +202,7 @@ body {
 
 .veggies-card .veggies-text {
     text-align: center;
+    color: olivedrab;
 }
 
 
@@ -198,9 +214,14 @@ footer {
     justify-content: space-evenly;
     padding: 30px 0px;
 }
+
 #cityBtns {
     width: fit-content;
     display: block;
     margin: auto;
     margin-top: 3%;
+}
+
+#cityBtns button {
+    border-radius: 80px;
 }
