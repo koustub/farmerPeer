@@ -5,7 +5,7 @@ growthApi();
 
 function growthApi(){
    $.ajax({
-      url:"http://harvesthelper.herokuapp.com/api/v1/plants?api_key=324ce6305a7559e91581645b9ae72c7c",
+      url:"https://harvesthelper.herokuapp.com/api/v1/plants?api_key=324ce6305a7559e91581645b9ae72c7c",
       method: "GET"
    }).then(function (response){
       for (var i = 0; i < 45; i++){
