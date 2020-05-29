@@ -14,7 +14,7 @@ Weather and climate conditions play a crucial role in how we grow our food. Ensu
 
 # Contributors
 
-- jason kitamura
-- joanna santosh
+- [Jason kitamura](https://github.com/Jason-Kitamura)
+- [joanna santosh](https://github.com/jsanthos01)
 # link to the website
 https://koustub.github.io/farmerPeer/
